@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:if="${param.success}">
+    <div class="alert alert-info">You've successfully registered
+        to our awesome app!
+    </div>
+</div>
+
+<form action="#" th:action="@{/newTaskCreate} " method="post">
+    <div class="modal-body">
+        <div class="form-group">
+            <label>describeTask</label>
+            <input type="text" class="form-control" name="describeTask" placeholder="Describe Task">
+            <!--/*@thymesVar id="presented" type=""*/-->
+            <span th:if="${presented==false}">[[${message}]]</span>
+
+        </div>
+        <div class="form-group">
+            <label>textForTask</label>`
+            <input type="text" class="form-control" name="textForTask" placeholder="enter your Text">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" value="Add task">
+    </div>
+
+
+    <!-- <input type="text" name="describeTask" placeholder="describe" >
+      <input type="text" name="textForTask" placeholder="text" >
+      <input type = "submit" class="btn btn-primary" value="Update Task">-->
+</form>
+
+
+</body>
+</html>

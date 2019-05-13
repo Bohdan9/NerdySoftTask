@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+<div class="text-center">
+       <label>Send From:</label>
+       <em th:text="${allies.sendFrom}"></em>
+
+    <h2>Do you want to delete this task?</h2>
+   <h3> <label>Describe for task:</label>
+
+       <p> <em th:text="${allies.describeTask}"></em></p>
+    </h3>
+    <h3> <label>Task Text:</label>
+        <p> <em th:text="${allies.textForTask}"></em> </p>
+    </h3>
+
+
+    <a th:href="'/task/delete/' + ${allies.id}">
+        <button type="button" class="btn btn-danger">Delete task</button>
+    </a>
+</div>
+</body>
+</html>

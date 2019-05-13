@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<p>
+<div class="text-center">
+Please insert email you want to send. Description and Text of task which you create earlier!!!
+</div></p>
+<form action="#" th:action="@{/shareTask} " method="post">
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Email">
+            <span th:if="${presented==false}">[[${message}]]</span>
+        </div>
+    </div>
+
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" name="describeTask" placeholder="Describe Task">
+            <span th:if="${presented==false}">[[${message}]]</span>
+
+        </div>
+        <div class="form-group">
+            <label>Task text</label>`
+            <input type="text" class="form-control" name="textForTask" placeholder="Enter your Text">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" value="Add task">
+    </div>
+
+    <!--<input type="email" name="email" placeholder="email" >
+    <input type="describeTask" name="describeTask" placeholder="describe" >
+    <input type="textForTask" name="textForTask" placeholder="text" >
+    <input type = "submit" class="btn btn-primary" value="Update Task">-->
+</form>
+</body>
+</html>
