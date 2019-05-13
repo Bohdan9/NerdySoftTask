@@ -51,7 +51,7 @@ public class TaskController {
     }
 
     @Test
-    public void testUpdateEmployee() {
+    public void testUpdateTask() {
         Constant constant = new Constant();
         int id = 1;
         Task task = restTemplate.getForObject(getRootUrl() + "/update/" + id, Task.class);
@@ -63,7 +63,7 @@ public class TaskController {
     }
 
     @Test
-    public void testDeleteEmployee() {
+    public void testDeleteTask() {
         int id = 2;
         Task task = restTemplate.getForObject(getRootUrl() + "/task/delete/" + id, Task.class);
         assertNotNull(task);
