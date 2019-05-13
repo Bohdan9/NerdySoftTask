@@ -54,12 +54,13 @@ public class TaskController {
     public void testUpdateTask() {
         Constant constant = new Constant();
         int id = 1;
-        Task task = restTemplate.getForObject(getRootUrl() + "/update/" + id, Task.class);
-        task.setDescribeTask(constant.SET_DESCRIBE_FOR_TASK);
-        task.setTextForTask(constant.SET_TEXT_FOR_TASK);
-        restTemplate.postForLocation(getRootUrl() + "/update/" + id, task);
-        ResponseEntity updatedTask = restTemplate.postForEntity(getRootUrl() + "/update/"+ id, task, Task.class);
-        assertNotNull(updatedTask);
+        String task = restTemplate.getForObject(getRootUrl() + "/edit/" + id, String.class);
+        System.out.println(task);
+//        task.setDescribeTask(constant.SET_DESCRIBE_FOR_TASK);
+//        task.setTextForTask(constant.SET_TEXT_FOR_TASK);
+//        restTemplate.postForLocation(getRootUrl() + "/update/" + id, task);
+//        ResponseEntity updatedTask = restTemplate.postForEntity(getRootUrl() + "/update/"+ id, task, Task.class);
+//        assertNotNull(updatedTask);
     }
 
     @Test
