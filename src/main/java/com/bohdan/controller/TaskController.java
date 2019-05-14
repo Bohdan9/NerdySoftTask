@@ -42,7 +42,7 @@ public class TaskController {
     public String showUpdateForm(@PathVariable("id") int id, Model model) {
         Task user = taskService.findById(id);
         model.addAttribute("user", user);
-        return "update-user";
+        return "update-task";
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
@@ -50,7 +50,7 @@ public class TaskController {
                              BindingResult result, Model model) {
         if (result.hasErrors()) {
             task.setId(id);
-            return "update-user";
+            return "update-task";
         }
         task.setUserId(globalController.getLoginUser().getId());
         taskService.addTask(task);
@@ -106,8 +106,6 @@ public class TaskController {
         taskService.addTask(task);
         return "redirect:/";
     }
-
-
 }
 
 

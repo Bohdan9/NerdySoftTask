@@ -14,10 +14,9 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<p>
 <div class="text-center">
-Please insert email you want to send. Description and Text of task which you create earlier!!!
-</div></p>
+    <p>Please insert email you want to send. Description and Text must be the same of task which you create!!!</p>
+</div>
 <form action="#" th:action="@{/shareTask} " method="post">
     <div class="modal-body">
         <div class="form-group">
@@ -42,11 +41,6 @@ Please insert email you want to send. Description and Text of task which you cre
     <div class="modal-footer">
         <input type="submit" class="btn btn-primary" value="Add task">
     </div>
-
-    <!--<input type="email" name="email" placeholder="email" >
-    <input type="describeTask" name="describeTask" placeholder="describe" >
-    <input type="textForTask" name="textForTask" placeholder="text" >
-    <input type = "submit" class="btn btn-primary" value="Update Task">-->
 </form>
 </body>
 </html>
